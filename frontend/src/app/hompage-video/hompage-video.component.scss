@@ -25,12 +25,51 @@ video {
   width: 50vw;
   max-width: 80vw;
   height: 80vh;
+  padding: 20px;
   border: 10px solid black;
   background: #ffffff;
   box-shadow: 0px 2px 3px rgba(35, 38, 59, 0.05),
     0px 10px 30px rgba(35, 38, 59, 0.08);
   border-radius: 20px;
+  position: relative;
   overflow: hidden;
+  .image-container {
+    position: relative;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+  }
+  img{
+    max-height: 500px;
+    object-fit: center;
+  }
+  .bottom-text,
+  .top-text {
+    font-family: impact;
+    font-size: 50px;
+    color: white;
+    -webkit-text-stroke: 3px black;
+    z-index: 3;
+    transform: translateX(-50%);  
+  }
+  .bottom-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+  }
+  .top-text {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+  }
+  .noise {
+    pointer-events: none;
+    position: absolute;
+    mix-blend-mode: hard-light;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 2;
+  }
 }
 .input-container {
   width: 40vh;

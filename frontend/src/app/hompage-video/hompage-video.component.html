@@ -10,11 +10,19 @@
   </div>
   <div *ngIf="showResults" class="result-container">
     <div class="image-results">
-      <div>
+      <div class="image-container">
+        <div class="top-text">ONE DOES NOT SIMPLY</div>
+        <div class="bottom-text">WIN DRAGONHACK</div>
+        <img
+          src="../../assets/noise.png"
+          class="noise"
+          alt="your image"
+          [ngStyle]="{ opacity: filterValue / 100 }"
+        />
         <img
           [src]="imageSrc || ''"
           alt="your image"
-          [ngStyle]="{ 'filter': fliter }"
+          [ngStyle]="{ filter: fliter }"
         />
       </div>
       <span>Deepfry your meme</span>
