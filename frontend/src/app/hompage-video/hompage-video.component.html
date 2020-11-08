@@ -1,0 +1,36 @@
+<div class="container">
+  <div *ngIf="!showResults" class="input-container">
+    <div class="dropzone">
+      <div class="hint">
+        <div>Insert here</div>
+        <img src="../../assets/lenny.gif" />
+      </div>
+      <input type="file" id="file" (change)="handleFileInput($event)" />
+    </div>
+  </div>
+  <div *ngIf="showResults" class="result-container">
+    <div class="image-results">
+      <div>
+        <img
+          [src]="imageSrc || ''"
+          alt="your image"
+          [ngStyle]="{ 'filter': fliter }"
+        />
+      </div>
+      <span>Deepfry your meme</span>
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+        (change)="deepfry($event)"
+      />
+    </div>
+  </div>
+  <video
+    [autoplay]="'true'"
+    [loop]="true"
+    [muted]="true"
+    src="../../assets/video.mp4"
+  ></video>
+</div>
